@@ -1,0 +1,52 @@
+@media screen 
+{
+    .footer {
+    
+        position:fixed;
+        bottom: 40px;
+        height: 70px;
+        color: white;
+        font-size: 16px;
+        text-align: left;
+        overflow: hide;
+        padding: 8px 30px;
+      
+    }
+       
+footer {
+    
+    position:fixed;
+    bottom: 0px;
+    width:100%;
+    height: 55px;
+   
+    color: white;
+    font-size: 16px;
+    background-color: rgb(30, 30, 133);
+    text-align: center;
+    
+    overflow: hide;
+    padding: 5px 15px;
+    
+    
+} 
+ 
+   
+
+    .btn
+    {
+        background-color:RoyalBlue;
+        width: 120px;
+        border-radius: 10px;
+        height: 50px;
+        color: ghostwhite;
+        font-size: 25px;
+        margin-left: 20px;
+        
+    }
+    mat-icon 
+    {
+    margin: 10px;
+    
+    }
+}

@@ -1,0 +1,14 @@
+
+<div class="location">
+  <mat-form-field class="dropdown" appearance="fill">
+    <mat-icon matPrefix style="font-size: 2.0em">&nbsp;contact_page  </mat-icon>
+    <mat-label>&nbsp; &nbsp; Location</mat-label>
+    <mat-select>
+      <mat-option>Please select your Location</mat-option>
+      <div *ngFor= "let generalVisitList of generalVal">
+      <mat-option value="option1" >{{generalVisitList.location}}</mat-option>
+    </div>
+    </mat-select>
+  </mat-form-field><br><br>
+  <button class="sub_button" mat-raised-button (click)="onSubmit()">Submit</button>
+  </div>

@@ -1,0 +1,21 @@
+
+<router-outlet>
+  <div class="footer" >
+    <button class="btn"  (click)="Welcome()" >
+        <mat-icon>home</mat-icon>Exit</button>
+ </div>
+
+ <footer>  
+           <div style="padding-left: 900px;margin-top:-15px;">
+        
+              <span class="timeWatch" style="padding-left: 900px;color: azure;">
+                
+                &#169;2021 ATT Infosoft. All rights reserved.<br>
+                  
+                <h1>{{curDay | date: 'EE'}}, {{dayDate | date: 'mediumDate'}}  {{currentTime | date:'mediumTime'}} </h1> 
+              </span>
+          </div> 
+  
+  </footer>
+
+</router-outlet>

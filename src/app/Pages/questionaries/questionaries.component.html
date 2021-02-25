@@ -1,0 +1,17 @@
+<mat-horizontal-stepper #stepper #index >
+    <div *ngFor="let queLis of _listQues; index as i;">
+      <mat-step>
+        <mat-card class="style2">
+          <div class="style1">
+            <h1>{{queLis.Q}}</h1>
+          </div>
+          <h1>{{queLis.Ques}}</h1>
+          <mat-radio-group aria-label="Select an option">
+            <button class="button1" (click)="goForward(stepper, i)"  type="button">Yes</button>
+            <button class="button2" (click)="goForward(stepper, i)" type="button">No</button>
+          </mat-radio-group><br><br>
+        </mat-card>
+      </mat-step>
+    </div>
+  </mat-horizontal-stepper>
+

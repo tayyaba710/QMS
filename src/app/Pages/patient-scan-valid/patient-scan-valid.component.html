@@ -1,0 +1,31 @@
+<div class="step2">
+  <div class="contain">
+      <h1 >Vistors Information</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" #ngForm=ngForm >  
+        <label >
+          <b>NRIC / ID : </b>
+            <input style="margin:auto;" type="text" style="width: 150px; height: 40px ;" (keyup)=getVal($event) name="NRIC" placeholder="Enter NRIC" formControlName="patNRIC" ngModel>
+         
+            {{validationResult}} 
+        </label><br>
+        <br>
+        <label>
+          <b>Mobile No : </b>
+          <input  type="text"  style="margin:auto;" type="text" style="width: 150px; height: 40px;" placeholder="Enter your Number "  >
+      </label><br><br>
+        <!--<button class="button1 " mat-raised-button color="primary" style="width: 150px; height: 45px;" [disabled]="profileForm.valid" (click)="ngclick('submit')" type="submit"  >Submit</button>-->
+        <button class="button1" type="submit" [disabled]="profileForm.valid" (click)="ngclick('submit')">Submit</button>
+    
+      </form>
+
+    <br>
+    <img src="./assets/Images/scanid.gif" width="400px" height="200px">
+    <img src = "./../../assets/Images/image1.jpg" width="400px" height="200px"  class="image1">
+      
+  </div>  
+  </div>
+  
+
+
+
+

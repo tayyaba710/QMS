@@ -1,0 +1,14 @@
+.contain{
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+}
+p{
+  font-weight: bold;
+}
+.text_one{
+  font-size: 40px;
+  color:rgb(167, 135, 30);
+
+}

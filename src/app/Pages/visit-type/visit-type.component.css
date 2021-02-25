@@ -1,0 +1,32 @@
+.contain{
+    text-align: center;
+    padding-top: 5%;
+}
+
+.option{
+    text-align: center;
+    margin: left;
+    width: 500px;
+    height: 300px;
+    margin-right:80%;
+    margin-top:60px;
+    margin-bottom:30%;
+    margin-left:450px;
+    border-radius: 0px;
+    position: fixed;
+  
+  }
+  mat-icon{
+    font-size: 45px;
+    color: rgb(20, 28, 32);
+    margin-right: 400px;
+}
+h2{
+    text-align: center;
+    margin-top: -20px;
+ 
+    font-size: 25px;
+}
+.hover-class:hover {
+    background-color: rgb(90, 164, 194);
+  }

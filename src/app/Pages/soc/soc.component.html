@@ -1,0 +1,20 @@
+<div class="soc_main">
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-error *ngIf="patControl.hasError('required')">Please enter Patient Name</mat-error>
+      <mat-label>Patient Name</mat-label>
+      <input matInput (keyup)=getVal($event) [formControl]="patControl">
+    </mat-form-field>
+  </form>
+
+  <mat-form-field class="dropdown" appearance="fill">
+    <mat-label>SOC</mat-label>
+    <mat-select>
+      <mat-option>None</mat-option>
+      <div *ngFor= "let listsoc2 of listsoc">
+      <mat-option value="option1" (click)="getSelectedDropdown($event)">{{listsoc2.soc}}</mat-option>
+    </div>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <button class="sub_button" mat-raised-button (click)="onSubmit()">Submit</button>

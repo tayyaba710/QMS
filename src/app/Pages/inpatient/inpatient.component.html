@@ -1,0 +1,49 @@
+<div class="formone">
+<form class="example-form">
+  <mat-icon matPrefix style="font-size: 2.0em">&nbsp;contact_page  </mat-icon>
+  <mat-form-field class="example-full-width">
+    <mat-error *ngIf="patControl.hasError('required')">Please insert your Patient Name</mat-error>
+    <mat-label>&nbsp; &nbsp;Patient Name</mat-label>
+    <input matInput (keyup)=getPatientVal($event) [formControl]="patControl" autocomplete="off" >
+  </mat-form-field>
+  
+</form>
+
+<mat-icon matPrefix style="font-size: 1.8em">local_hospital  </mat-icon>
+<mat-form-field class="dropdown" appearance="fill">
+  <mat-label>&nbsp; &nbsp; Ward*</mat-label>
+  <mat-select [formControl]="wardControl">
+    <mat-option>Please Select Your Ward</mat-option>
+    <div *ngFor= "let wardListOne of wardList">
+    <mat-option value="option1" (click)="getSelectedDropdownWard($event)">{{wardListOne.wn}}</mat-option>
+  </div>
+  </mat-select>
+  <mat-error *ngIf="wardControl.hasError('required')">Please choose your Bed.</mat-error>
+</mat-form-field>
+<br>
+<mat-icon matPrefix style="font-size: 1.8em">add_business  </mat-icon>
+<mat-form-field class="dropdown" appearance="fill">
+  <mat-label>&nbsp; &nbsp;Room*</mat-label>
+  <mat-select [formControl]="roomControl">
+    <mat-option>Please Select Your Room</mat-option>
+    <div *ngFor= "let roomListOne of roomList">
+    <mat-option value="option1" (click)="getSelectedDropdownRoom($event)">{{roomListOne.rn}}</mat-option>
+  </div>
+  </mat-select>
+  <mat-error *ngIf="roomControl.hasError('required')">Please choose your Bed.</mat-error>
+</mat-form-field>
+
+<mat-form-field class="dropdown" appearance="fill">
+  <mat-icon matPrefix style="font-size: 1.8em">local_hotel  </mat-icon>
+  <mat-label>&nbsp; &nbsp; Bed*</mat-label>
+  <mat-select [formControl]="bedControl">
+    <mat-option>Please Select Your Bed</mat-option>
+    <div *ngFor= "let bedListOne of bedList">
+    <mat-option value="option1" (click)="getSelectedDropdownBed($event)">{{bedListOne.bn}}</mat-option>
+  </div>
+  </mat-select>
+  <mat-error *ngIf="bedControl.hasError('required')">Please choose your Bed.</mat-error>
+</mat-form-field>
+
+<button class="sub_button" mat-raised-button (click)="onSubmit()">Submit</button>
+</div>
