@@ -1,3 +1,34 @@
+# QMS (Queue Management System) – Angular
+
+A simple Angular front-end for managing queues, tickets, and reports.
+
+## ✨ Features
+- Ticket list & detail view
+- Create / update tickets (reactive forms + validation)
+- Search, sort, pagination
+- API service w/ interceptors & error handling
+
+## 🧰 Tech Stack
+- **Angular** (CLI) • RxJS • TypeScript
+- UI: Angular Forms, HTTPClient
+- Tooling: Node.js, npm
+
+## 🚀 Getting Started
+```bash
+# 1) Install
+npm install
+
+# 2) Run dev server
+npm start
+# or
+ng serve -o
+
+# 3) Build
+npm run build
+
+
+
+
 # Internet
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
