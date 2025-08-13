@@ -3,11 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 // src/environments/environment.ts
+// export const environment = {
+//   production: false,
+//   apiBaseUrl: 'http://localhost:8080/api'
+// };
+
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:8080/api'
+  apiBaseUrl: '/api'
 };
-
 
 /*
  * For easier debugging in development mode, you can import the following file

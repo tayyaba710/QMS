@@ -1,0 +1,5 @@
+{
+  "tickets": [
+    { "id": 1, "title": "Sample ticket", "status": "OPEN", "priority": "HIGH" }
+  ]
+}
