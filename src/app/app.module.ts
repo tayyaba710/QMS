@@ -1,47 +1,57 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { PagesModule } from './Pages/pages.module';
+
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './Angular-Materials/material.module';
+
+
+import { AuthInterceptor } from './core/http/auth.interceptor';
+
 import { ValidatorService } from './Services/validator.service';
 import { QuestionariesService } from './Services/questionaries.service';
 import { VisitTypeService } from './Services/visit-type.service';
-import { VisitTypeComponent } from './Pages/visit-type/visit-type.component';
-import { QuestionariesComponent } from './Pages/questionaries/questionaries.component';
-import { SocComponent } from './Pages/soc/soc.component';
-import { InpatientComponent } from './Pages/inpatient/inpatient.component';
-import { GeneralVisitComponent } from './Pages/general-visit/general-visit.component';
-import { PatientNotValidComponent } from './Pages/patient-not-valid/patient-not-valid.component';
-import { PatientScanValidComponent } from './Pages/patient-scan-valid/patient-scan-valid.component';
-import { RegSuccessComponent } from './Pages/reg-success/reg-success.component';
-import { RegUnsuccessComponent } from './Pages/reg-unsuccess/reg-unsuccess.component';
 import { SocService } from './Services/soc.service';
 import { InpatientService } from './Services/inpatient.service';
-import {BlocklistService} from './Services/blocklist.service';
-import { from } from 'rxjs';
+import { BlocklistService } from './Services/blocklist.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    VisitTypeComponent,
-    QuestionariesComponent,
-    SocComponent,
-    InpatientComponent,
-    GeneralVisitComponent,
-    PatientNotValidComponent,
-    PatientScanValidComponent,
-    RegSuccessComponent,
-    RegUnsuccessComponent
+  
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule
+    BrowserModule,              
+    BrowserAnimationsModule,    
+    AppRoutingModule,           
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+    // Feature module that declares Pages components
+    PagesModule,
+
+    
+    MatIconModule,
+    MatButtonModule,
   ],
-  providers: [ValidatorService,QuestionariesService,VisitTypeService, InpatientService,SocService,BlocklistService],
+  providers: [
+    ValidatorService,
+    QuestionariesService,
+    VisitTypeService,
+    InpatientService,
+    SocService,
+    BlocklistService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
